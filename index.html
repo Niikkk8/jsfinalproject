@@ -7,6 +7,7 @@
     <title>MovieTime</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/a0c5c115e8.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <div class="nav_search-wrapper">
             <nav>
                 <div class="navbar_logo">
-                    <h2 class="navbar_logo-text">Movie<span class="purple_Text">Time</span></h2>
+                    <h2 class="navbar_logo-text">Movie<span class="blue_text">Time</span></h2>
                 </div>
                 <div class="navbar_links">
                     <ul class="navbar_link-list">
@@ -35,18 +36,39 @@
             </nav>
             <div class="input_wrapper">
                 <div class="row">
-                    <h2 class="search_section-heading">Search for your favourite <span class="purple_Text">movies/tv
+                    <h2 class="search_section-heading">Search for your favourite <span class="blue_text">movies/tv
                             shows</span></h2>
-                    <form class="search_button-wrapper">
-                        <input type="search" name="movie-search" id="movie_input" placeholder="Enter keywords...">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </form>
+                    <form class="search_button-wrapper" onsubmit="renderMovies(); return false;">
+                        <input type="search" name="movie-search" id="movie_input" class="search_input" placeholder="Enter keywords...">
+                         <button class="search_button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        
+        <div class="progress">
+            <div class="progress__track"></div>
+        </div>
+        <div class="row">
+            <div class="filter_section-wrapper">
+                <h2 class="movie_header">
+                    Search Results
+                </h2>
+                <select name="movie_filter" id="filter" class="sort_option" onchange="filtermovies(event)">
+                    <option value="" disabled selected>Sort</option>
+                    <option value="latest_first">Release, Latest first</option>
+                    <option value="oldest_first">Release, Oldest first</option>
+                    <option value="imdb_rating">Rating, IMDB</option>
+                </select>
+            </div>
+            <div class="movie_list">
+                <div class="movie">
+
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
