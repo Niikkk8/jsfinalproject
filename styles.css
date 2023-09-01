@@ -121,38 +121,6 @@ nav {
     cursor: pointer;
 }
 
-/* LOADING SCREEN */
-
-/* .progress {
-    width: 100%;
-    height: 8px;
-    background-color: #0077b6
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-}
-
-@keyframes animate-progress {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(250%);
-    }
-}
-
-.progress__track {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 40%;
-    background-color: rgba(255, 255, 255, 0.75);
-    animation: animate-progress 0.8s infinite linear;
-} */
-
-
 /* FILTER SECTION */
 
 .filter_section-wrapper {
@@ -161,19 +129,124 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 24px;
+    margin-top: 28px;
 }
 
 .movie_header {
     font-size: 20px;
 }
 
-.movie_title-search{
+.movie_title-search {
     color: #0077b6;
 }
+
+.filter_header-wrapper{
+    width: 25%;
+    position: relative;
+}
+
+.filter_header-wrapper::before{
+    content: "1990";
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+}
+
+.filter_header-wrapper::after{
+    content: "2023";
+    position: absolute;
+    right: 0;
+    bottom: -16px;
+}
+
+.filter_header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-year{
+    color: #007bff;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper *,
+.checkbox-wrapper ::after,
+.checkbox-wrapper ::before {
+    box-sizing: border-box;
+}
+
+/* The switch - the box around the slider */
+.checkbox-wrapper .switch {
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.checkbox-wrapper .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.checkbox-wrapper .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #adb5bd;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.checkbox-wrapper .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.27em;
+    bottom: 0.25em;
+    background-color: #adb5bd;
+    transition: .4s;
+}
+
+.checkbox-wrapper input:checked+.slider {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.checkbox-wrapper input:focus+.slider {
+    box-shadow: 0 0 1px #007bff;
+}
+
+.checkbox-wrapper input:checked+.slider:before {
+    transform: translateX(1.4em);
+    background-color: #fff;
+}
+
+.filter_input{
+    width: 100%;
+    margin-top: 24px;
+}
+
 
 /* OUTPUT SECTION */
 
 .movie_list {
+    margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

@@ -39,8 +39,9 @@
                     <h2 class="search_section-heading">Search for your favourite <span class="blue_text">movies/tv
                             shows</span></h2>
                     <form class="search_button-wrapper" onsubmit="renderMovies(); return false;">
-                        <input type="search" name="movie-search" id="movie_input" class="search_input" placeholder="Enter keywords...">
-                         <button class="search_button">
+                        <input type="search" name="movie-search" id="movie_input" class="search_input"
+                            placeholder="Enter keywords...">
+                        <button class="search_button">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                 </div>
@@ -56,6 +57,23 @@
                 <h2 class="movie_header">
                     Search Results
                 </h2>
+                <div class="filter_header-wrapper">
+                    <div class="filter_header">
+                        <h3 class="filter_input-title">
+                            <p class="filter_input-release">Release Date: 
+                            <span id="year" class="primary-year">1962</span></p>
+                        </h3>
+                        <div class="checkbox-wrapper">
+                            <label class="switch">
+                                <input type="checkbox" id="filter_checkbox" onchange="activeFilter()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter_range">
+                        <input type="range" class="filter_input" id="filter_input" onchange="filterChange()" min="1900" max="2023">
+                    </div>
+                </div>
             </div>
             <div class="movie_list">
                 <div class="movie">
