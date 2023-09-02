@@ -22,6 +22,7 @@ async function renderMovies() {
         displayMovies(filteredMovies.slice(0, 6));
     } else {
         movieListEl.innerHTML = "<h2>No movies found.</h2>";
+        document.body.classList.remove('display_progress');
     }
 }
 
