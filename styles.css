@@ -65,7 +65,7 @@ nav {
 }
 
 .navbar_link-item {
-    margin-left: 16px;
+    margin-left: 24px;
 }
 
 .navbar_link {
@@ -78,6 +78,31 @@ nav {
     width: 100%;
     background-color: #0077b6;
     border-radius: 50px;
+    transition: all 300ms ease;
+}
+
+.navbar_link-primary:hover{
+    background-color: #1eb3d1;
+}
+
+.navbar_link-hover {
+    position: relative;
+}
+
+.navbar_link-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    height: 2px;
+    background-color: #fff;
+    width: 0;
+    transition: all 300ms ease;
+}
+
+.navbar_link-hover:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* INPUT */
@@ -121,6 +146,51 @@ nav {
     cursor: pointer;
 }
 
+/* PROGRESS */
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background-color: #00b4d8;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.display_progress .progress {
+    display: block;
+}
+
+@keyframes running {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(3);
+    }
+}
+
+@keyframes animate-progress {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+.progress__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.75);
+    animation: animate-progress 0.8s infinite linear;
+}
+
 /* FILTER SECTION */
 
 .filter_section-wrapper {
@@ -140,33 +210,33 @@ nav {
     color: #0077b6;
 }
 
-.filter_header-wrapper{
+.filter_header-wrapper {
     width: 25%;
     position: relative;
 }
 
-.filter_header-wrapper::before{
+.filter_header-wrapper::before {
     content: "1990";
     position: absolute;
     left: 0;
     bottom: -16px;
 }
 
-.filter_header-wrapper::after{
+.filter_header-wrapper::after {
     content: "2023";
     position: absolute;
     right: 0;
     bottom: -16px;
 }
 
-.filter_header{
+.filter_header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.primary-year{
+.primary-year {
     color: #007bff;
 }
 
@@ -237,9 +307,10 @@ nav {
     background-color: #fff;
 }
 
-.filter_input{
+.filter_input {
     width: 100%;
     margin-top: 24px;
+    cursor: pointer;
 }
 
 
@@ -259,11 +330,23 @@ nav {
     overflow: hidden;
     margin: 28px 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor:no-drop;
+}
+
+.movie_card:hover .movie_poster{
+    transform: scale(1.05);
+}
+
+.movie_poster-wrapper{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
 }
 
 .movie_poster {
     width: 100%;
-    height: 80%;
+    height: 100%;
+    transition: all 300ms ease;
 }
 
 .movie_description {
@@ -280,4 +363,55 @@ nav {
 .movie_year {
     font-size: 16px;
     color: #0c0c64;
+}
+
+
+@media(max-width: 1024px){
+    nav{
+        margin: 0 24px;
+    }
+}
+
+@media(max-width: 768px){
+    .filter_header-wrapper{
+        width: 35%;
+    }
+    .movie_card{
+        width: 37%;
+    }
+}
+
+@media(max-width: 425px){
+    .navbar_links{
+        display: none;
+    }
+    .search_section-heading{
+        margin: 0 24px;
+        text-align: center;
+    }
+    form{
+        margin: 0 24px;
+    }
+    .header_background{
+        height: 100%;
+    }
+    /* .movie_card{
+        height: 100%;
+    } */
+    .movie_name{
+        font-size: 14px;
+    }
+    .movie_year{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 375px){
+    .search_section-heading{
+        font-size: 24px;
+    }
+    .movie_card{
+        height: max-content;
+        width: 51%;
+    }
 }
