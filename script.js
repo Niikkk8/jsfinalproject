@@ -9,7 +9,7 @@ var filterStatus = false;
 let allMovies = [];
 
 async function renderMovies() {
-    const movies = await fetch(`http://www.omdbapi.com/?s=${searchInput.value}&apikey=59430427`);
+    const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=59430427`);
     const moviesData = await movies.json();
     document.body.classList += ' display_progress';
 
