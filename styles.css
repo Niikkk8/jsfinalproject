@@ -340,13 +340,12 @@ nav {
 .movie_poster-wrapper{
     width: 100%;
     height: 80%;
-    height: max-content;
     overflow: hidden;
 }
 
 .movie_poster {
     width: 100%;
-    height: 100%, max-content;
+    height: 100%;
     transition: all 300ms ease;
 }
 
