@@ -9,9 +9,9 @@ var filterStatus = false;
 let allMovies = [];
 
 async function renderMovies() {
+    document.body.classList += ' display_progress';
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=59430427`);
     const moviesData = await movies.json();
-    document.body.classList += ' display_progress';
 
     if (moviesData.Search) {
         movieTitleSearch.innerHTML = `<h2 class="movie_header">Search results for<br><span class="movie_title-search">"${searchInput.value}"</span></h2>`
