@@ -216,7 +216,7 @@ nav {
 }
 
 .filter_header-wrapper::before {
-    content: "1990";
+    content: "1900";
     position: absolute;
     left: 0;
     bottom: -16px;
